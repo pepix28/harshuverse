@@ -1,0 +1,579 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #12080d;
+    color: #fff5f7;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* ---------------- PAGES ---------------- */
+
+.page {
+    display: none;
+    min-height: 100vh;
+    position: relative;
+}
+
+.page.active {
+    display: flex;
+}
+
+
+/* ---------------- HOME ---------------- */
+
+#home {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background:
+        radial-gradient(circle at top, #5d182e 0%, transparent 45%),
+        linear-gradient(135deg, #12080d, #2b0d18);
+}
+
+.hero {
+    width: 90%;
+    max-width: 700px;
+    padding: 50px 20px;
+}
+
+.small-title {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #eab4c2;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(60px, 10vw, 100px);
+    font-weight: 400;
+    color: #ffdce5;
+}
+
+.hero h2 {
+    font-size: 18px;
+    letter-spacing: 5px;
+    color: #e99aaa;
+    margin-top: -10px;
+}
+
+.main-photo {
+    width: 260px;
+    height: 330px;
+    margin: 35px auto;
+    border-radius: 150px 150px 20px 20px;
+    overflow: hidden;
+    border: 3px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 60px rgba(255, 80, 130, 0.25);
+}
+
+.main-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.intro {
+    max-width: 500px;
+    margin: auto;
+    line-height: 1.8;
+    color: #e9cbd2;
+}
+
+.start-btn,
+.password-box button,
+.bottom-buttons button {
+    margin-top: 30px;
+    padding: 14px 30px;
+    border: 1px solid #e28a9f;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: inherit;
+}
+
+.start-btn:hover,
+.password-box button:hover,
+.bottom-buttons button:hover {
+    background: #d95778;
+    transform: translateY(-3px);
+}
+
+
+/* ---------------- PASSWORD ---------------- */
+
+#passwordPage {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background:
+        radial-gradient(circle, #5d182e, transparent 50%),
+        #12080d;
+}
+
+.password-box {
+    width: 90%;
+    max-width: 450px;
+    padding: 50px 30px;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 25px;
+
+    backdrop-filter: blur(15px);
+}
+
+.lock {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.password-box h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 35px;
+}
+
+.password-box p {
+    color: #d9b8c1;
+    margin-top: 10px;
+}
+
+.hint {
+    color: #ed91a6 !important;
+}
+
+.password-box input {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 30px;
+    border: 1px solid #75404d;
+    background: rgba(0,0,0,0.25);
+    color: white;
+    text-align: center;
+    outline: none;
+}
+
+#error {
+    color: #ff718f;
+    min-height: 20px;
+}
+
+
+/* ---------------- MEMORIES ---------------- */
+
+#memoriesPage {
+    display: none;
+    flex-direction: column;
+    padding: 70px 7%;
+    background:
+        radial-gradient(circle at top, #491424, transparent 45%),
+        #10070c;
+}
+
+#memoriesPage.active {
+    display: flex;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header p {
+    color: #e68196;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.section-header h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: 65px;
+    font-weight: 400;
+}
+
+.section-header span {
+    color: #caaab2;
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+}
+
+.memory-card {
+    position: relative;
+    height: 380px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.memory-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.memory-card:hover img {
+    transform: scale(1.08);
+}
+
+.memory-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent 35%, rgba(0,0,0,0.9));
+}
+
+.memory-card div {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2;
+}
+
+.memory-card span {
+    color: #e68b9e;
+    font-size: 12px;
+}
+
+.memory-card h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+}
+
+
+/* ---------------- BUTTONS ---------------- */
+
+.bottom-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+
+/* ---------------- MODAL ---------------- */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+
+    background: rgba(10, 2, 5, 0.92);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    width: 90%;
+    max-width: 900px;
+
+    overflow: hidden;
+    border-radius: 25px;
+
+    background: #210d15;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.modal-content > img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.modal-text {
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-text > span {
+    color: #e27f96;
+}
+
+.modal-text h2 {
+    font-family: "Great Vibes", cursive;
+    font-size: 55px;
+    font-weight: 400;
+    margin: 10px 0 20px;
+}
+
+.modal-text p {
+    line-height: 1.9;
+    color: #dec2c9;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 5;
+
+    border: none;
+    background: none;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.music-player {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-top: 30px;
+    padding: 15px;
+
+    border: 1px solid #57313c;
+    border-radius: 15px;
+}
+
+.music-player button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: #d95778;
+    color: white;
+}
+
+.music-player small {
+    display: block;
+    color: #997983;
+}
+
+
+/* ---------------- LETTER ---------------- */
+
+#letterPage,
+#promisePage {
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 20px;
+
+    background:
+        radial-gradient(circle at top, #531526, transparent 50%),
+        #10070c;
+}
+
+.letter-container,
+.promise-container {
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #df899d;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.letter {
+    padding: 50px;
+
+    background: #f7e7df;
+    color: #48252d;
+
+    border-radius: 5px;
+
+    box-shadow: 0 20px 70px rgba(0,0,0,0.4);
+}
+
+.letter h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: 55px;
+    font-weight: 400;
+    text-align: center;
+    margin: 20px 0 40px;
+}
+
+.letter p {
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+.letter-top {
+    text-align: center;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 40px;
+    font-family: "Great Vibes", cursive;
+    font-size: 28px;
+}
+
+
+/* ---------------- PROMISES ---------------- */
+
+.promise-container h1 {
+    text-align: center;
+    font-family: "Great Vibes", cursive;
+    font-size: 65px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+.promise-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.promise {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 20px;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 15px;
+}
+
+.promise span {
+    color: #e27f96;
+}
+
+.promise p {
+    color: #dfc4cb;
+}
+
+.final-message {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.final-message h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+
+/* ---------------- HEARTS ---------------- */
+
+.hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    bottom: -20px;
+    animation: floatUp linear forwards;
+    opacity: 0.5;
+}
+
+@keyframes floatUp {
+
+    from {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.6;
+    }
+
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+
+}
+
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width: 900px) {
+
+    .memory-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .modal-content {
+        grid-template-columns: 1fr;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .modal-content > img {
+        height: 350px;
+    }
+
+    .modal-text {
+        padding: 30px;
+    }
+
+}
+
+@media(max-width: 600px) {
+
+    .hero h1 {
+        font-size: 65px;
+    }
+
+    .memory-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .memory-card {
+        height: 450px;
+    }
+
+    .letter {
+        padding: 30px 22px;
+    }
+
+    .letter h1 {
+        font-size: 45px;
+    }
+
+    .promise-container h1 {
+        font-size: 48px;
+    }
+
+}
