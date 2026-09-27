@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy 3 Months ❤️ #HARSHUVERSE</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Floating Hearts -->
+    <div class="hearts"></div>
+
+    <!-- LANDING PAGE -->
+    <section id="home" class="page active">
+
+        <div class="hero">
+
+            <p class="small-title">A little something for my favourite person</p>
+
+            <h1>Happy 3 Months</h1>
+
+            <h2>#HARSHUVERSE ❤️</h2>
+
+            <div class="main-photo">
+                <img src="images/main.jpeg" alt="Us">
+            </div>
+
+            <p class="intro">
+                Three months of us, countless memories,
+                and a million more moments waiting to happen.
+            </p>
+
+            <button class="start-btn" onclick="showPassword()">
+                Open My Heart 💌
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PASSWORD PAGE -->
+    <section id="passwordPage" class="page">
+
+        <div class="password-box">
+
+            <div class="lock">🔐</div>
+
+            <h2>Something Special Is Waiting...</h2>
+
+            <p>Only you know the key to my heart.</p>
+
+            <p class="hint">Hint: Our date ❤️</p>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter the date"
+            >
+
+            <button onclick="unlock()">
+                Unlock ❤️
+            </button>
+
+            <p id="error"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MEMORIES PAGE -->
+    <section id="memoriesPage" class="page">
+
+        <div class="section-header">
+
+            <p>Our little universe</p>
+
+            <h1>Our Memories ❤️</h1>
+
+            <span>8 moments. Infinite feelings.</span>
+
+        </div>
+
+        <div class="memory-grid">
+
+            <div class="memory-card" onclick="openMemory(1)">
+                <img src="images/memory1.jpeg">
+                <div>
+                    <span>01</span>
+                    <h3>The Beginning</h3>
+                </div>
+            </div>
+
+            <div class="memory-card" onclick="openMemory(2)">
+                <img src="images/memory2.jpeg">
+                <div>
+                    <span>02</span>
+                    <h3>That Smile</h3>
+                </div>
+            </div>
+
+            <div class="memory-card" onclick="openMemory(3)">
+                <img src="images/memory3.jpeg">
+                <div>
+                    <span>03</span>
+                    <h3>Our Little Moments</h3>
+                </div>
+            </div>
+
+            <div class="memory-card" onclick="openMemory(4)">
+                <img src="images/memory4.jpeg">
+                <div>
+                    <span>04</span>
+                    <h3>Us</h3>
+                </div>
+            </div>
+
+            <div class="memory-card" onclick="openMemory(5)">
+                <img src="images/memory5.jpeg">
+                <div>
+                    <span>05</span>
+                    <h3>My Favourite Person</h3>
+                </div>
+            </div>
+
+            <div class="memory-card" onclick="openMemory(6)">
+                <img src="images/memory6.jpeg">
+                <div>
+                    <span>06</span>
+                    <h3>Forever Memories</h3>
+                </div>
+            </div>
+
+            <div class="memory-card" onclick="openMemory(7)">
+                <img src="images/memory7.jpeg">
+                <div>
+                    <span>07</span>
+                    <h3>You & Me</h3>
+                </div>
+            </div>
+
+            <div class="memory-card" onclick="openMemory(8)">
+                <img src="images/memory8.jpeg">
+                <div>
+                    <span>08</span>
+                    <h3>To Be Continued...</h3>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="bottom-buttons">
+
+            <button onclick="showPage('letterPage')">
+                💌 My Letter
+            </button>
+
+            <button onclick="showPage('promisePage')">
+                🤞 My Promises
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- MEMORY POPUP -->
+
+    <div id="memoryModal" class="modal">
+
+        <div class="modal-content">
+
+            <button class="close" onclick="closeMemory()">×</button>
+
+            <img id="modalImage">
+
+            <div class="modal-text">
+
+                <span id="modalNumber"></span>
+
+                <h2 id="modalTitle"></h2>
+
+                <p id="modalNote"></p>
+
+                <div class="music-player">
+
+                    <button onclick="toggleMusic()">
+                        🎵
+                    </button>
+
+                    <div>
+                        <strong id="songName"></strong>
+                        <small>Our song</small>
+                    </div>
+
+                </div>
+
+                <audio id="audio"></audio>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- LETTER PAGE -->
+
+    <section id="letterPage" class="page">
+
+        <div class="letter-container">
+
+            <button class="back-btn" onclick="showPage('memoriesPage')">
+                ← Back
+            </button>
+
+            <div class="letter">
+
+                <p class="letter-top">To my favourite girl,</p>
+
+                <h1>My Letter To You ❤️</h1>
+
+                <p>
+                    Dear Harshita,
+                </p>
+
+                <p>
+                    Three months might sound like a small amount of time,
+                    but somehow you've managed to become such a beautiful
+                    part of my life.
+                </p>
+
+                <p>
+                    From our random conversations to our little moments,
+                    every memory with you has something special about it.
+                </p>
+
+                <p>
+                    I don't know what the future has planned for us,
+                    but I know that I want to keep making memories with you,
+                    laughing with you, annoying you and loving you.
+                </p>
+
+                <p>
+                    Thank you for being you.
+                    Thank you for every little effort, every smile,
+                    every conversation and every moment.
+                </p>
+
+                <p>
+                    Happy 3 months, my love. ❤️
+                </p>
+
+                <div class="signature">
+                    Forever yours,<br>
+                    <strong>Adarsh</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROMISE PAGE -->
+
+    <section id="promisePage" class="page">
+
+        <div class="promise-container">
+
+            <button class="back-btn" onclick="showPage('memoriesPage')">
+                ← Back
+            </button>
+
+            <h1>My Promises To You 🤞❤️</h1>
+
+            <div class="promise-list">
+
+                <div class="promise">
+                    <span>01</span>
+                    <p>I promise to always respect you and your feelings.</p>
+                </div>
+
+                <div class="promise">
+                    <span>02</span>
+                    <p>I promise to listen to you, even when you just want to rant.</p>
+                </div>
+
+                <div class="promise">
+                    <span>03</span>
+                    <p>I promise to celebrate your happiness like it's my own.</p>
+                </div>
+
+                <div class="promise">
+                    <span>04</span>
+                    <p>I promise to stand beside you through the difficult days.</p>
+                </div>
+
+                <div class="promise">
+                    <span>05</span>
+                    <p>I promise to keep making you smile in my own stupid ways.</p>
+                </div>
+
+                <div class="promise">
+                    <span>06</span>
+                    <p>I promise to keep choosing us, one day at a time.</p>
+                </div>
+
+            </div>
+
+            <div class="final-message">
+                <p>
+                    And one more promise...
+                </p>
+
+                <h2>
+                    I'll keep creating beautiful memories with you. ❤️
+                </h2>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
